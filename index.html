@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>FAQ Accordian Slider</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+
+		.normal {
+			transition: 0.5s;
+			transform: rotate(0deg)
+		}
+
+		body {
+			font-family: 'tahoma', sans-serif;
+			color: #666;
+			font-size: 16px;
+			background: #f9f9f9;
+			line-height: 1.6em;
+		}
+
+		img {
+			width: 15px;
+			height: 15px;
+			margin-right: 10px;
+		}
+
+		#container {
+			width: 60%;
+			margin: 30px auto;
+			overflow: auto;
+		}
+
+		h1 {
+			text-align: center;
+			margin-bottom: 20px;
+		}
+
+		.title {
+			height: 40px;
+			background: #6bb170;
+			color: #fff;
+			text-align: center;
+			padding-top: 13px;
+		}
+
+		.faq li {
+			padding: 20px;
+		}
+
+		.faq li.q {
+			background: #eee;
+			font-weight: bold;
+			font-size: 120%;
+			border-bottom: 1px #ddd solid;
+			cursor: pointer;
+		}
+
+		.faq li.a {
+			background: #ddd;
+			display: none;
+		}
+
+		@media(max-width:800px) {
+			#container {
+				width: 90%;
+			}
+		}
+
+		.rotate {
+			-moz-transform: rotate(90deg);
+			-webkit-transform: rotate(90deg);
+			transition: 0.5s;
+			transform: rotate(90deg);
+		}
+	</style>
+
+<body>
+	<div id="container">
+		<h1>FAQ Slider</h1>
+		<div class="title">
+			<h3>FAQ Slider Project</h3>
+		</div>
+		<ul class="faq">
+			<li class="q"><img class="normal" src="arrow.png" />How are you?</li>
+			<li class="a">I am Fine</li>
+
+			<li class="q"><img class="normal" src="arrow.png">who are you?</li>
+			<li class="a">I am a Web Developer</li>
+
+			<li class="q"><img class="normal" src="arrow.png">where you live?</li>
+			<li class="a">I live in Pakistan</li>
+
+			<li class="q"><img class="normal" src="arrow.png">What is your country name?</li>
+			<li class="a">Pakistan</li>
+
+			<li class="q"><img class="normal" src="arrow.png">what is your work place?</li>
+			<li class="a">Vvork</li>
+
+			<li class="q"><img class="normal" src="arrow.png">Are you Happy?</li>
+			<li class="a">Yes</li>
+		</ul>
+	</div>
+
+</body>
+
+
+<script>
+
+	$(document).ready(function () {
+		$("li.q").on("click", function () {
+			$(this).next().slideToggle(100).siblings("li.a").slideUp(100)
+			var img = $(this).children('img')
+			$('li.q > img').not(img).removeClass("rotate")
+			$(img).toggleClass("rotate")
+		})
+	})
+
+</script>
+</head>
+
+</html>
