@@ -24,7 +24,7 @@ In this project a simple FAQ slider is described using pure jQuery.
 
 ## Project Preview:
 
-(https://ali-tahir4024.github.io/FAQ-slider-jQuery-/).
+[FAQ Slider Jquery](https://alitahir4024.github.io/FAQ-slider-jQuery-/)
 
 # Note:
 
